@@ -1,0 +1,133 @@
+.modal
+    position: fixed
+    z-index: 999
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    height: 100%
+    width: 100%
+    
+    &.blur
+        -webkit-backdrop-filter: blur(4px)
+        backdrop-filter: blur(4px)
+
+    /* Modal Content */
+    .modal-content
+        border-radius: 15px
+        padding: 25px 20px
+        padding: 0
+        max-width: 335px
+        background-color: white
+        margin: 0 auto
+
+        position: relative
+        
+        display: flex
+        flex-direction: column
+
+        &.middle
+            margin-top: 50vh
+            transform: translateY(-50%)
+        
+        &.bottom
+            position: absolute
+            bottom: 50px
+            left: 50%
+            transform: translateX(-50%)            
+
+        &.animated
+            animation-duration: 0.4s
+            &.slideTop
+                animation-name: animateTop
+            &.slideBottom
+                animation-name: animateBottom
+            &.fade
+                animation-name: animateFade
+                animation-duration: 0.6s
+
+
+        &.sm
+            max-width: 335px
+        &.md
+            max-width: 480px
+        &.lg
+            max-width: 700px
+        &.xl
+            max-width: 80%
+
+        /* The Close Button */
+        .close
+            position: absolute
+            top: 15px
+            right: 15px
+            color: #aaa
+            float: right
+            font-size: 28px
+            font-weight: bold
+
+            &:hover, &:focus
+                color: black
+                text-decoration: none
+                cursor: pointer
+
+        .modal-header
+            padding: 20px 20px 10px
+            min-height: 60px
+            margin-bottom: 10px
+            
+            &.border
+                border-bottom: 1px solid #cfcfcf
+
+        .modal-body
+            padding: 10px 20px
+            max-height: 80vh
+            overflow-y: auto
+
+        .modal-footer
+            padding: 10px 20px 20px
+            min-height: 60px
+            margin-top: 10px
+            p
+                color: #262e66
+                font-size: 1.5rem
+            &.border
+                border-top: 1px solid #cfcfcf
+
+        &.full-screen
+            width: 100%
+            height: 100%
+            margin: 0
+            border-radius: 0
+            overflow-y: scroll
+            margin-top: 0
+            transform: none
+            max-width: none
+
+            .modal-body
+                max-height: 100%
+            
+/* Add Animation */
+@keyframes animateTop
+    from
+        top: -300px
+        opacity: 0
+    to
+        top: 0
+        opacity: 1
+
+/* Add Animation */
+@keyframes animateBottom
+    from
+        bottom: -300px
+        opacity: 0
+    to
+        bottom: 50px
+        opacity: 1
+
+/* Add Animation */
+@keyframes animateFade
+    from
+        opacity: 0
+    to
+        opacity: 1
