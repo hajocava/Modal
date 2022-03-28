@@ -20,6 +20,7 @@ export const Modal = ({
     backgroundColor = 'rgba(134, 134, 134, 0.702)',
     classCloseModal = 'modal',
     blurEffect = false,
+    borderRadius = 15,
 }: ModalProps) => {
 
     const closeModalWhenClickOutside = (e: any) => {
@@ -47,7 +48,10 @@ export const Modal = ({
                     ${position} 
                     ${fullScreen ? "full-screen" : ""}
                 `}
-                style={{ ...style }}
+                style={{
+                    ...style,
+                    borderRadius
+                }}
             >
                 {
                     showCloseButton && (

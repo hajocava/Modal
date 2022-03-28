@@ -25,5 +25,6 @@ export interface ModalProps extends BaseProps {
     size?: 'sm' | 'md' | 'lg' | 'xl';
     animStyle?: 'slideTop' | 'slideBottom' | 'fade';
     position?: 'top' | 'middle' | 'bottom';
+    borderRadius?: number;
     setShow: (show: boolean) => void;
 }
