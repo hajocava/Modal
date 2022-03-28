@@ -53,18 +53,17 @@ export const Modal = ({
                     borderRadius
                 }}
             >
-                {
-                    showCloseButton && (
-                        <img
-                            onClick={() => setShow(false)}
-                            className="close"
-                            src={closeIcon}
-                            alt="close modal"
-                            width="24px"
-                            height="24px"
-                        />
-                    )
-                }
+                <img
+                    onClick={() => setShow(false)}
+                    className="close"
+                    src={closeIcon}
+                    alt="close modal"
+                    width="24px"
+                    height="24px"
+                    style={{
+                        display: showCloseButton ? 'block' : 'none'
+                    }}
+                />
                 {children}
             </div>
         </div>
